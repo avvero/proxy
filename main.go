@@ -17,7 +17,7 @@ func main() {
 	flag.Parse()
 
 	// proxy stuff
-	http.Handle("/", http.FileServer(http.Dir("")))
+	http.Handle("/", http.FileServer(http.Dir(".")))
 	http.HandleFunc("/proxy", func(response http.ResponseWriter, request *http.Request) {
 
 		target, ok := request.URL.Query()["target"]
