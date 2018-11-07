@@ -8,9 +8,11 @@ Hi
 <script type="application/javascript">
     $.ajax({
         type: "POST",
-        // url: "http://login-test3.fxclub.org/api/v1.0/login",
-        url: "/proxy?target=http%3A%2F%2Flocalhost%3A10002%2Fapi%2Fv1.0%2Flogin",
-        // The key needs to match your method's input parameter (case-sensitive).
+        url: "localhost:8080/proxy?target=http%3A%2F%2Flogin-test3.fxclub.org%2Fapi%2Fv1.0%2Flogin",
+        headers: {
+            'Authorization':'Basic bG9naW46cGFzcw==',
+            'Content-Type':'application/json'
+        },
         data: JSON.stringify(
                 {
                     "commonInfo": {
